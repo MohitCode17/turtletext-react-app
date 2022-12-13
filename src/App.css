@@ -1,38 +1,200 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* ========== Navbar CSS ========== */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #ffffff;
+  padding: 24px 32px;
+  height: 72px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.logo{
+  font-family: 'Rubik Vinyl', cursive;
+  color: #61DAFB;
+}
+
+.toggler{
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.toggler--slider{
+  width: 25px;
+  height: 13px;
+  border-radius: 2rem;
+  background-color: #2B283A;
+  margin-inline: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid black;
+  box-sizing: content-box;
+}
+
+.toggler--slider--circle{
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+/* While Dark Mode is on */
+
+nav.dark {
+  background-color: #21222A;
+}
+
+nav.dark .toggler--slider {
+  border-color: white;
+  background-color: #F5F5F5;
+}
+
+nav.dark .toggler--slider--circle {
+  background-color: black;
+}
+
+nav.dark .toggler--slider {
+  justify-content: flex-end;
+}
+
+.toggler p{
+  font-size: 0.725rem;
+  font-weight: 600;
+}
+
+.toggler--light{
+  color: #2B283A;
+}
+
+.toggler-dark{
+  color: #D5D4D8;
+}
+
+
+
+/* TextArea Styling */
+
+.container{
+  padding: 45px 100px;
+  color: #2B283A;
+  height: 100vh;
+}
+
+.container.dark{
+  background-color: #282D35;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.title{
+  margin-bottom: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+textarea{
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+textarea.dark{
+  background-color: #282D35;
+  color: white;
+}
+
+.button{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.btn{
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #61DAFB;
+  color: #2B283A;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Text Analysis */
+.text-details{
+  margin-top: 22px;
+}
+
+.text-details h4{
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.text-details p{
+  font-size: 15px;
+}
+
+
+
+
+/* =========================== Responsive Code =========================== */
+
+@media screen and (max-width: 640px) {
+  .title{
+    font-size: 22px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .text-details h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .text-details p{
+    font-size: 14px;
+  }
+
+  .container{
+    padding: 45px 70px;
   }
 }
+
+@media screen and (max-width: 460px) {
+  .title{
+    font-size: 20px;
+  }
+
+  .text-details h4{
+    font-size: 18.5px;
+    margin-bottom: 5px;
+  }
+  
+  .text-details p{
+    font-size: 12.5px;
+  }
+
+  .container{
+    padding: 45px 30px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .toggler p{
+    display: none;
+  } 
+}
+
